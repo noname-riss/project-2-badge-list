@@ -1,6 +1,6 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
+# Class Project 2
+
+This is a project for IST256
 
 ## Open-wc Starter App
 
