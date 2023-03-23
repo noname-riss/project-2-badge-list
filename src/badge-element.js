@@ -16,13 +16,15 @@ class Badge extends LitElement {
 
     .wrapper{
       display: inline-flex;
+      border: 2px solid blue;
+      border-left:  soild #3e98d3;
     }
 
     .header{
-      background-color: #cfe6f4;
+     background-color: #cfe6f4;
       border-left: 150px soild #3e98d3;
       border: 2px soild black;
-      display: flex;
+     display: flex;
   
     }
 
