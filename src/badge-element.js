@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 class Badge extends LitElement {
     static properties = {
       icon: {type: Image},
@@ -10,27 +12,38 @@ class Badge extends LitElement {
 
 
     static styles = css`
-    :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--project-2-badge-list-background-color);
-    }
-    
-    .header{
-      background-color: #cfe6f4;
-      border-left: 15px soild #3e98d3;
-      border: 2px solid black;
-      height: 40px;
+   
 
+    .wrapper{
+      display: inline-flex;
+      border: 2px solid blue;
+      border-left:  soild #3e98d3;
     }
+
+    .header{
+     background-color: #cfe6f4;
+      border-left: 150px soild #3e98d3;
+      border: 2px soild black;
+     display: flex;
+  
+    }
+
+    .collapse{
+      flex-direction: right;
+    }
+
+    .title{
+      color: #333333;
+      font-size: 14px;
+      font-family: "effra", sans-serif;
+      flex-direction: left;
+    }
+
+    .badgeIcon{
+      height: 40px;
+      flex-direction: left;
+    }
+
     `
 
     constructor() {
@@ -43,7 +56,7 @@ class Badge extends LitElement {
       return html`
       <div class= wrapper>
         <div class=header>
-        <img src=${this.icon}><h1>${this.title}</h1>
+        <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1><details class="collapse"></details>
       </div>
       <slot>
 
