@@ -5,7 +5,7 @@ class Badge extends LitElement {
     static properties = {
       icon: {type: Image},
       title: {type: String},
-      openedState: {type: Boolean},
+      paragraph:{type: String},
       author: {type: String},
       timeToComplete: {type: Number}
     }
@@ -15,21 +15,28 @@ class Badge extends LitElement {
    
 
     .wrapper{
-      display: inline-flex;
-      border: 2px solid blue;
-      border-left:  soild #3e98d3;
+      display: column;
+      padding: 10px;
     }
 
     .header{
-     background-color: #cfe6f4;
-      border-left: 150px soild #3e98d3;
-      border: 2px soild black;
+    background-color: #cfe6f4;
+    border-left: 15px solid #3e98d3;
+    border-top: 2px solid #3e98d3;
+    border-bottom:2px solid #3e98d3;
+    border-right:2px solid #3e98d3;
+   
+    width: 400px;
      display: flex;
   
     }
 
     .collapse{
-      flex-direction: right;
+     
+      
+      color: #333333;
+      font-size: 14px;
+      font-family: "effra", sans-serif;
     }
 
     .title{
@@ -37,6 +44,7 @@ class Badge extends LitElement {
       font-size: 14px;
       font-family: "effra", sans-serif;
       flex-direction: left;
+      margin-right:auto;
     }
 
     .badgeIcon{
@@ -51,16 +59,25 @@ class Badge extends LitElement {
       this.icon=new URL('../assets/open-wc-logo.svg', import.meta.url).href;
       this.title="TESTING"
       this.openedState=false;
+      this.paragraph="Test12"
+      this.author="Ryan"
+      this.timeToComplete=2.8;
     }
     render() {
       return html`
       <div class= wrapper>
         <div class=header>
-        <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1><details class="collapse"></details>
-      </div>
-      <slot>
-
-      </slot>
+        <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1>
+        
+        <details class="collapse">
+          <summary></summary>
+           <slot>
+        ${this.paragraph}
+        ${this.author}
+        ${this.timeToComplete}
+    </slot></details>
+     
+    </div>
     </div>
       
       
