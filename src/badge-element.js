@@ -15,28 +15,23 @@ class Badge extends LitElement {
    
 
     .wrapper{
-      display: column;
       padding: 10px;
+
     }
 
     .header{
-    background-color: #cfe6f4;
-    border-left: 15px solid #3e98d3;
-    border-top: 2px solid #3e98d3;
-    border-bottom:2px solid #3e98d3;
-    border-right:2px solid #3e98d3;
-   
-    width: 400px;
      display: flex;
-  
+     background-color: #cfe6f4;
     }
 
     .collapse{
-     
-      
       color: #333333;
       font-size: 14px;
       font-family: "effra", sans-serif;
+      border-left: 15px solid #3e98d3;
+    border-top: 2px solid #3e98d3;
+    border-bottom:2px solid #3e98d3;
+    border-right:2px solid #3e98d3;
     }
 
     .title{
@@ -52,6 +47,10 @@ class Badge extends LitElement {
       flex-direction: left;
     }
 
+    .slotWrapper{
+      background-color:white;
+    }
+
     `
 
     constructor() {
@@ -59,25 +58,26 @@ class Badge extends LitElement {
       this.icon=new URL('../assets/open-wc-logo.svg', import.meta.url).href;
       this.title="TESTING"
       this.openedState=false;
-      this.paragraph="Test12"
+      this.paragraph="This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph."
       this.author="Ryan"
       this.timeToComplete=2.8;
     }
     render() {
       return html`
-      <div class="wrapper">
-        <div class="header">
-        <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1>
-        
-        <details class="collapse">
-          <summary></summary>
+      <div class="wrapper"> 
+      <details class="collapse">
+          <summary class="header"> <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1></summary>
+         
+          <div class="slotWrapper">
            <slot>
         ${this.paragraph}
         ${this.author}
         ${this.timeToComplete}
-    </slot></details>
-     
-    </div>
+      </slot>
+      </div>
+    </details>
+  
+    
     </div>
       
       
