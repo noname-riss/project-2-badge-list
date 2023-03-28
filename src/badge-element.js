@@ -15,23 +15,28 @@ class Badge extends LitElement {
    
 
     .wrapper{
+      display: column;
       padding: 10px;
-
     }
 
     .header{
-     display: flex;
-     background-color: #cfe6f4;
-    }
-
-    .collapse{
-      color: #333333;
-      font-size: 14px;
-      font-family: "effra", sans-serif;
-      border-left: 15px solid #3e98d3;
+    background-color: #cfe6f4;
+    border-left: 15px solid #3e98d3;
     border-top: 2px solid #3e98d3;
     border-bottom:2px solid #3e98d3;
     border-right:2px solid #3e98d3;
+   
+    width: 400px;
+     display: flex;
+  
+    }
+
+    .collapse{
+     
+      
+      color: #333333;
+      font-size: 14px;
+      font-family: "effra", sans-serif;
     }
 
     .title{
@@ -47,10 +52,6 @@ class Badge extends LitElement {
       flex-direction: left;
     }
 
-    .slotWrapper{
-      background-color:white;
-    }
-
     `
 
     constructor() {
@@ -58,7 +59,7 @@ class Badge extends LitElement {
       this.icon=new URL('../assets/open-wc-logo.svg', import.meta.url).href;
       this.title="TESTING"
       this.openedState=false;
-      this.paragraph="This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph."
+      this.paragraph="Test12"
       this.author="Ryan"
       this.timeToComplete=2.8;
     }
@@ -73,11 +74,9 @@ class Badge extends LitElement {
         ${this.paragraph}
         ${this.author}
         ${this.timeToComplete}
-      </slot>
-      </div>
-    </details>
-  
-    
+    </slot></details>
+     
+    </div>
     </div>
       
       
