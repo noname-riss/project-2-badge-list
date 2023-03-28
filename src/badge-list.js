@@ -1,11 +1,6 @@
 import { LitElement, html, css } from 'lit';
-import "@lrnwebcomponents/simple-icon/simple-icon.js";
-import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
-
-
-
-class Project2BadgeList extends LitElement {
+class BadgeList extends LitElement {
   static properties = {
     badgeNumber: { 
       type: String 
@@ -24,17 +19,26 @@ class Project2BadgeList extends LitElement {
 
   constructor() {
     super();
-    this.badgeNumber = '0';
+    this.badgeNumber = '5';
   }
 
   render() {
     return html`
       <div class='background'>
       Badges (${this.badgeNumber})
-      
+        <badge-element>
+        </badge-element>
+        <badge-element>
+        </badge-element>
+        <badge-element>
+        </badge-element>
+        <badge-element>
+        </badge-element>
+        <badge-element>
+        </badge-element>
       </div>
     `;
   }
 }
 
-customElements.define('project-2-badge-list', Project2BadgeList);
+customElements.define('badge-list', BadgeList);

@@ -65,8 +65,8 @@ class Badge extends LitElement {
     }
     render() {
       return html`
-      <div class= wrapper>
-        <div class=header>
+      <div class="wrapper">
+        <div class="header">
         <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1>
         
         <details class="collapse">
