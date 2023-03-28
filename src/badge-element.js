@@ -65,11 +65,12 @@ class Badge extends LitElement {
     }
     render() {
       return html`
-      <div class="wrapper"> 
-      <details class="collapse">
-          <summary class="header"> <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1></summary>
-         
-          <div class="slotWrapper">
+      <div class= wrapper>
+        <div class=header>
+        <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1>
+        
+        <details class="collapse">
+          <summary></summary>
            <slot>
         ${this.paragraph}
         ${this.author}
