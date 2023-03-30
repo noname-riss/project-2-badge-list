@@ -1,15 +1,52 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
+
 class Badge extends LitElement {
     static properties = {
-      icon: {type: Image},
+      titleIcon: {type: Image},
       title: {type: String},
       paragraph:{type: String},
       author: {type: String},
-      timeToComplete: {type: Number}
+      timeToComplete: {type: Number},
+      collapseIcon: {type: String},
+      opened: {type: Boolean, reflect: true}
     }
 
+
+    toggleEvent(e){
+      
+      const state=this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true : false;
+  
+      console.log(state);
+      this.opened=state;
+
+      if(this.opened===true)
+      {
+        this.collapseIcon="arrow-drop-down";
+      }
+      else if(this.opened===false){
+        this.collapseIcon="arrow-drop-up";
+      }
+      
+    }
+  
+  
+  updated(changedProperties){
+    changedProperties.forEach((oldValue,propName) => {
+      if(propName==="opened"){
+        this.dispatchEvent(new CustomEvent('opened-changed',{
+          composed: true,
+          bubbles: true,
+          cancelable: true,
+          detail:{
+            value: this[propName]
+          }
+        }))
+  
+      }
+    });
+  }
 
     static styles = css`
    
@@ -47,32 +84,33 @@ class Badge extends LitElement {
 
     constructor() {
       super();
-      this.icon=new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+      this.titleIcon=new URL('../assets/open-wc-logo.svg', import.meta.url).href;
       this.title="TESTING"
       this.openedState=false;
       this.paragraph="This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph."
       this.author="Ryan"
       this.timeToComplete=2.8;
+      this.opened=false;
+      this.collapseIcon= "arrow-drop-up";
     }
+
     render() {
       return html`
       <div class= "wrapper"> 
-      <details class="collapse">
-          <summary class="header"> <img class="badgeIcon" src=${this.icon}><h1 class="title">${this.title}</h1></summary>
+      <details class="collapse" .open='${this.opened}' @toggle=${this.toggleEvent}>
+      
+          <summary class="header"> <img class="badgeIcon" src=${this.titleIcon}><h1 class="title">${this.title}</h1><simple-icon icon="${this.collapseIcon}"></simple-icon></summary>
          
           <div class="slotWrapper">
            <slot>
         <p>${this.paragraph}</p>
         <p>Author: ${this.author}</p>       
-        <p>Time to complete: ${this.timeToComplete}</p>
+        <p>Time to complete: ${this.timeToComplete} hrs</p>
       </slot>
       </div>
     </details>
     </div>
-      
-      
       `
-    
     }
 
 
