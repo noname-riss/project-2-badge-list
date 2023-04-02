@@ -14,6 +14,10 @@ class Badge extends LitElement {
     }
 
 
+
+
+  
+
     toggleEvent(e){
       
       const state=this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true : false;
