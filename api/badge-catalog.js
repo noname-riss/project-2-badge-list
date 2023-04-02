@@ -2,7 +2,18 @@
 
 export default async function handler(request, res) {
 
-    const catalog= [];
+    const catalog= [
+      {
+      "titleIcon" : new URL('../assets/open-wc-logo.svg', import.meta.url).href,
+      "title": "TESTING",
+      "paragraph":"This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.",
+      "author":"Ryan",
+      "timeToComplete":2.8,
+      "opened": false,
+      "collapseIcon": "arrow-drop-up"
+      }
+
+    ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

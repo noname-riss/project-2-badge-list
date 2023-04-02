@@ -5,7 +5,12 @@ class BadgeList extends LitElement {
     badgeNumber: { 
       type: String 
     },
+    badges: {type: Array}
   }
+
+
+
+ 
 
   static styles = css`
     
@@ -20,22 +25,27 @@ class BadgeList extends LitElement {
   constructor() {
     super();
     this.badgeNumber = '5';
+    this.badges=[];
+    this.updateClasses();
   }
+  
+  updateClasses() {
+    const address = new URL('../api/badge-catalog.js',import.meta.url).href;
+   fetch(address).then((response) =>{
+         return response.json();
+     }).then((data)=>{
+    this.classes = data;
+    });
+    }
 
   render() {
     return html`
       <div class='background'>
       Badges (${this.badgeNumber})
-        <badge-element>
-        </badge-element>
-        <badge-element>
-        </badge-element>
-        <badge-element>
-        </badge-element>
-        <badge-element>
-        </badge-element>
-        <badge-element>
-        </badge-element>
+       ${this.badges.map(badgeElement => html`
+       <badge-element titleIcon="${badgeElement.titleIcon}" title="${badgeElement.title}" paragraph="${badgeElement.paragraph}" author="${badgeElement.author}" timeToComplete="${badgeElement.timeToComplete}" collapseIcon="${badgeElement.collapseIcon}" opened="${badgeElement.opened}"></badge-element>
+       
+       `)}
       </div>
     `;
   }
