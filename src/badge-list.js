@@ -30,7 +30,7 @@ class BadgeList extends LitElement {
   }
   
   updateClasses() {
-    const address = '../api/badge-catalog';
+    const address = '/api/badge-catalog';
    fetch(address).then((response) =>{
     if(response.ok){
       return response.json();
