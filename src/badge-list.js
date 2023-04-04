@@ -30,11 +30,14 @@ class BadgeList extends LitElement {
   }
   
   updateClasses() {
-    const address = new URL('../api/badge-catalog.js',import.meta.url).href;
+    const address = new URL('../api/badge-catalog',import.meta.url).href;
    fetch(address).then((response) =>{
-         return response.json();
+    if(response.ok){
+      return response.json();
+    }
+         return [];
      }).then((data)=>{
-    this.classes = data;
+    this.badges = data;
     });
     }
 
@@ -44,7 +47,6 @@ class BadgeList extends LitElement {
       Badges (${this.badgeNumber})
        ${this.badges.map(badgeElement => html`
        <badge-element titleIcon="${badgeElement.titleIcon}" title="${badgeElement.title}" paragraph="${badgeElement.paragraph}" author="${badgeElement.author}" timeToComplete="${badgeElement.timeToComplete}" collapseIcon="${badgeElement.collapseIcon}" opened="${badgeElement.opened}"></badge-element>
-       
        `)}
       </div>
     `;
