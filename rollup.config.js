@@ -26,14 +26,15 @@ export default {
       serviceWorkerPath: 'dist/sw.js',
     }),
     /** Resolve bare module imports */
-    nodeResolve(copy({
+    nodeResolve(),
+    copy({
       targets: [
         {
           src: 'node_modules/@lrnwebcomponents/simple-icon/lib/svgs',
           dest: 'dist',
         }
       ],
-    }),),
+    }),
     /** Minify JS, compile JS to a lower language target */
     esbuild({
       minify: true,
