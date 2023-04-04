@@ -4,7 +4,7 @@ export default async function handler(request, res) {
 
     const catalog= [
       {
-      "titleIcon" : new URL('../assets/open-wc-logo.svg', import.meta.url).href,
+      "titleIcon" : "save",
       "title": "TESTING",
       "paragraph":"This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.",
       "author":"Ryan",
