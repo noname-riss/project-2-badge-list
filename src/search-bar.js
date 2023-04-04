@@ -32,7 +32,7 @@ class SearchBar extends LitElement {
     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    margin: 5em;
+    margin-bottom: 6em;
 }
   `;
   

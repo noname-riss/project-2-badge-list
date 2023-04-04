@@ -69,6 +69,7 @@ class Badge extends LitElement {
     border-top: 2px solid #3e98d3;
     border-bottom:2px solid #3e98d3;
     border-right:2px solid #3e98d3;
+    border-radius: 10px;
     }
     .title{
       color: #333333;
