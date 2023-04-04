@@ -14,11 +14,7 @@ class BadgeList extends LitElement {
 
   static styles = css`
     
-    .background {
-
-      background-color: #e9ecf3
-
-    }
+   
     
   `;
 
@@ -43,7 +39,7 @@ class BadgeList extends LitElement {
 
   render() {
     return html`
-      <div class='background'>
+      <div>
       Badges (${this.badgeNumber})
        ${this.badges.map(badgeElement => html`
        <badge-element titleIcon="${badgeElement.titleIcon}" title="${badgeElement.title}" paragraph="${badgeElement.paragraph}" author="${badgeElement.author}" timeToComplete="${badgeElement.timeToComplete}" collapseIcon="${badgeElement.collapseIcon}" opened="${badgeElement.opened}"></badge-element>
