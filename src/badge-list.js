@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-
+import "./search-bar.js";
 class BadgeList extends LitElement {
   static properties = {
     badgeNumber: { 
@@ -21,6 +21,9 @@ class BadgeList extends LitElement {
     this.badgeNumber = 5;
     this.badges=[];
     this.updateClasses();
+    this.getSearchResults().then((results) => {
+      this.badges = results;
+  });
   }
   
   updateClasses() {
@@ -35,12 +38,34 @@ class BadgeList extends LitElement {
     });
     }
 
+
+    async getSearchResults(value = '') {
+      const address = `/api/roster?search=${value}`;
+      const results = await fetch(address).then((response) => {
+          if (response.ok) {
+              return response.json()
+          }
+          return [];
+      })
+      .then((data) => {
+          return data;
+      });
+
+      return results;
+  }
+
+  async _handleSearchEvent(e) {
+      const term = e.detail.value;
+      this.badges.opened = await this.getSearchResults(term).opened;
+  }
+
+
   render() {
     return html`
       <div>
       Badges (${this.badgeNumber})
        ${this.badges.map(badgeElement => html`
-       <badge-element titleIcon="${badgeElement.titleIcon}" title="${badgeElement.title}" paragraph="${badgeElement.paragraph}" author="${badgeElement.author}" timeToComplete="${badgeElement.timeToComplete}" collapseIcon="${badgeElement.collapseIcon}" opened="${badgeElement.opened}"></badge-element>
+       <badge-element titleIcon="${badgeElement.titleIcon}" title="${badgeElement.title}" paragraph="${badgeElement.paragraph}" author="${badgeElement.author}" timeToComplete="${badgeElement.timeToComplete}" collapseIcon="${badgeElement.collapseIcon}" opened="${badgeElement.opened}" stepsToComplete="${badgeElement.stepsToComplete}"></badge-element>
        `)}
       </div>
     `;
