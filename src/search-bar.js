@@ -1,10 +1,11 @@
 import { LitElement, html, css } from 'lit';
 
 class SearchBar extends LitElement {
-  static properties = {
-  
+  static get properties() {
+    return {
+   value: {type: String},
   }
-
+  }
  
 
   static styles = css`
@@ -40,21 +41,29 @@ class SearchBar extends LitElement {
 
   constructor() {
     super();
-  
+  this.value='';
 
   }
+
+
+  
   
 
   render() {
     return html`
 
 
-    <input class="form-control" type="search" id="site-search" name="q" placeholder = "Search Content, Topics, and People">
-
-  
-
-
+    <input class="form-control" type="search" id="site-search" name="q" 
+    placeholder = "Search Content, Topics, and People" value="${this.value}" @input="${this._handleInput}">
     `;
+  }
+  _handleInput(e) {
+    this.value = e.target.value;
+    this.dispatchEvent(new CustomEvent('value-changed', {
+      detail: {
+        value: this.value,
+      }
+    }));
   }
 }
 
