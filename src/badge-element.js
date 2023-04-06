@@ -16,6 +16,11 @@ class Badge extends LitElement {
 
 
 //Adding a comment to push
+/* TODO 
+  Make steps to complete
+  Wire up search
+  Potentially add accessibility stuff
+*/
 
   
 
@@ -85,6 +90,7 @@ class Badge extends LitElement {
     }
     .slotWrapper{
       background-color:white;
+      padding: 1em;
     }
     `
 
