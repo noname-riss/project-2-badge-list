@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "./search-bar.js";
+import "./badge-element.js";
 class BadgeList extends LitElement {
   static properties = {
     badgeNumber: { 
@@ -40,7 +41,7 @@ class BadgeList extends LitElement {
 
 
     async getSearchResults(value = '') {
-      const address = `/api/roster?search=${value}`;
+      const address = `/api/badge-catalog?search=${value}`;
       const results = await fetch(address).then((response) => {
           if (response.ok) {
               return response.json()
@@ -56,12 +57,13 @@ class BadgeList extends LitElement {
 
   async _handleSearchEvent(e) {
       const term = e.detail.value;
-      this.badges.opened = await this.getSearchResults(term).opened;
+      this.badges = await this.getSearchResults(term);
   }
 
 
   render() {
     return html`
+     <search-bar @value-changed="${this._handleSearchEvent}"></search-bar>
       <div>
       Badges (${this.badgeNumber})
        ${this.badges.map(badgeElement => html`
