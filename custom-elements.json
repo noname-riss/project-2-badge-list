@@ -32,6 +32,33 @@
     },
     {
       "kind": "javascript-module",
+      "path": "stories/project-2-badge-list.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/project-2-badge-list.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/project-2-badge-list.stories.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/badge-element.js",
       "declarations": [
         {
@@ -129,9 +156,10 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"\"",
+              "default": "\"if you are seeing this  \"",
               "privacy": "public",
-              "attribute": "stepsToComplete"
+              "attribute": "stepsToComplete",
+              "reflects": true
             }
           ],
           "events": [
@@ -282,33 +310,6 @@
           "declaration": {
             "name": "SearchBar",
             "module": "src/search-bar.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "stories/project-2-badge-list.stories.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "App"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "stories/project-2-badge-list.stories.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "App",
-          "declaration": {
-            "name": "App",
-            "module": "stories/project-2-badge-list.stories.js"
           }
         }
       ]
