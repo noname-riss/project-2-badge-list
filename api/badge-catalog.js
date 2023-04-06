@@ -11,17 +11,17 @@ export default async function handler(request, res) {
       "timeToComplete":2.8,
       "opened": false,
       "collapseIcon": "arrow-drop-up",
-      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      "stepsToComplete":"Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours",
       },
       {
       "titleIcon" : "save",
       "title": "Amazon I AM",
-      "paragraph":"This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.",
+      "paragraph":"",
       "author":"Ryan",
       "timeToComplete":2.8,
       "opened": false,
       "collapseIcon": "arrow-drop-up",
-      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      "stepsToComplete":"Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
       },
       {
       "titleIcon" : "save",
@@ -31,7 +31,7 @@ export default async function handler(request, res) {
       "timeToComplete":2.8,
       "opened": false,
       "collapseIcon": "arrow-drop-up",
-      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      "stepsToComplete":"Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
 
       },
       {
@@ -44,7 +44,7 @@ export default async function handler(request, res) {
       "timeToComplete":2.8,
       "opened": false,
       "collapseIcon": "arrow-drop-up",
-      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      "stepsToComplete":"Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
       },    
 
     ];
