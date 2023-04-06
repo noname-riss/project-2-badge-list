@@ -122,6 +122,16 @@
               "default": "\"arrow-drop-up\"",
               "privacy": "public",
               "attribute": "collapseIcon"
+            },
+            {
+              "kind": "field",
+              "name": "stepsToComplete",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "stepsToComplete"
             }
           ],
           "events": [
@@ -160,6 +170,10 @@
             {
               "name": "opened",
               "fieldName": "opened"
+            },
+            {
+              "name": "stepsToComplete",
+              "fieldName": "stepsToComplete"
             }
           ],
           "superclass": {
@@ -198,9 +212,9 @@
               "kind": "field",
               "name": "badgeNumber",
               "type": {
-                "text": "string"
+                "text": "number"
               },
-              "default": "'5'",
+              "default": "5",
               "privacy": "public",
               "attribute": "badgeNumber"
             },

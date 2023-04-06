@@ -10,7 +10,8 @@ class Badge extends LitElement {
       author: {type: String},
       timeToComplete: {type: Number},
       collapseIcon: {type: String},
-      opened: {type: Boolean, reflect: true}
+      opened: {type: Boolean, reflect: true},
+      stepsToComplete: {type: String}
     }
 
 
@@ -97,6 +98,7 @@ class Badge extends LitElement {
       this.timeToComplete=2.8;
       this.opened=false;
       this.collapseIcon= "arrow-drop-up";
+      this.stepsToComplete="";
     }
 
     render() {
@@ -111,6 +113,7 @@ class Badge extends LitElement {
         <p>${this.paragraph}</p>
         <p>Author: ${this.author}</p>       
         <p>Time to complete: ${this.timeToComplete} hrs</p>
+        <p>${this.stepsToComplete}</p>
       </slot>
       </div>
     </details>

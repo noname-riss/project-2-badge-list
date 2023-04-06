@@ -18,7 +18,7 @@ class BadgeList extends LitElement {
 
   constructor() {
     super();
-    this.badgeNumber = 0;
+    this.badgeNumber = 5;
     this.badges=[];
     this.updateClasses();
   }
@@ -32,7 +32,6 @@ class BadgeList extends LitElement {
          return [];
      }).then((data)=>{
     this.badges = data;
-    this.badgeNumber = this.badgeNumber + 1;
     });
     }
 

@@ -5,13 +5,47 @@ export default async function handler(request, res) {
     const catalog= [
       {
       "titleIcon" : "save",
-      "title": "TESTING",
+      "title": "Amazon Cognito",
+      "paragraph":"",
+      "author":"Ryan",
+      "timeToComplete":2.8,
+      "opened": false,
+      "collapseIcon": "arrow-drop-up",
+      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      },
+      {
+      "titleIcon" : "save",
+      "title": "Amazon I AM",
       "paragraph":"This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.",
       "author":"Ryan",
       "timeToComplete":2.8,
       "opened": false,
-      "collapseIcon": "arrow-drop-up"
-      }
+      "collapseIcon": "arrow-drop-up",
+      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      },
+      {
+      "titleIcon" : "save",
+      "title": "Signing Up For AWS Services",
+      "paragraph":"This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.This is the testing paragraph.",
+      "author":"Ryan",
+      "timeToComplete":2.8,
+      "opened": false,
+      "collapseIcon": "arrow-drop-up",
+      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+
+      },
+      {
+      "titleIcon" : "save",
+      "title": "AWS- LAMBDA Phase 1",
+      "paragraph":"AWS Lambda is an event-driven, serverless computing platform provided by Amazon" 
+      + "as a part of Amazon Web Services. It is a computing service that runs code in response to events" +
+      "and automatically manages the computing resources required by that code  \n ",
+      "author":"Ryan",
+      "timeToComplete":2.8,
+      "opened": false,
+      "collapseIcon": "arrow-drop-up",
+      "stepsToComplete": "Creating your first lambda function 2.0 hours" + "\n Putting in your Hello Lambda Node.js code 2.0 Hours"
+      },    
 
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
