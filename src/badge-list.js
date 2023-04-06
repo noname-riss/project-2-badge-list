@@ -21,23 +21,12 @@ class BadgeList extends LitElement {
     super();
     this.badgeNumber = 5;
     this.badges=[];
-    this.updateClasses();
     this.getSearchResults().then((results) => {
       this.badges = results;
   });
   }
   
-  updateClasses() {
-    const address = '/api/badge-catalog';
-   fetch(address).then((response) =>{
-    if(response.ok){
-      return response.json();
-    }
-         return [];
-     }).then((data)=>{
-    this.badges = data;
-    });
-    }
+
 
 
     async getSearchResults(value = '') {
@@ -58,6 +47,7 @@ class BadgeList extends LitElement {
   async _handleSearchEvent(e) {
       const term = e.detail.value;
       this.badges = await this.getSearchResults(term);
+      console.log(term);
   }
 
 
