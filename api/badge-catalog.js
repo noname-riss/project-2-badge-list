@@ -1,7 +1,7 @@
 
 
 export default async function handler(request, res) {
-
+  const search = req.query.search || '';
     const catalog= [
       {
       "titleIcon" : "save",
@@ -48,6 +48,13 @@ export default async function handler(request, res) {
       },    
 
     ];
+    catalog.map((badgeC) => {
+      badgeC.index = badgeC.title.toLowerCase() + " " + badgeC.author.toLowerCase() + " " + badgeC.paragraph.toLowerCase()+" "+
+      badgeC.stepsToComplete.toLowerCase()+" "+badgeC.timeToComplete.toString().toLowerCase();
+    });
+    catalog = catalog.filter((badgeC) => {
+      return badgeC.index.indexOf(search.toLowerCase()) > -1;
+    });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");
