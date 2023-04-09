@@ -11,7 +11,7 @@
           "name": "handler",
           "parameters": [
             {
-              "name": "request"
+              "name": "req"
             },
             {
               "name": "res"
