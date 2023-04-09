@@ -2,7 +2,7 @@
 
 export default async function handler(request, res) {
   const search = req.query.search || '';
-    const catalog= [
+    let catalog= [
       {
       "titleIcon" : "save",
       "title": "Amazon Cognito",
@@ -48,6 +48,7 @@ export default async function handler(request, res) {
       },    
 
     ];
+    
     catalog.map((badgeC) => {
       badgeC.index = badgeC.title.toLowerCase() + " " + badgeC.author.toLowerCase() + " " + badgeC.paragraph.toLowerCase()+" "+
       badgeC.stepsToComplete.toLowerCase()+" "+badgeC.timeToComplete.toString().toLowerCase();

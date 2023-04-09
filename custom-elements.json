@@ -32,33 +32,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "stories/project-2-badge-list.stories.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "App"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "stories/project-2-badge-list.stories.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "App",
-          "declaration": {
-            "name": "App",
-            "module": "stories/project-2-badge-list.stories.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/badge-element.js",
       "declarations": [
         {
@@ -234,7 +207,22 @@
           "members": [
             {
               "kind": "method",
-              "name": "updateClasses"
+              "name": "getSearchResults",
+              "parameters": [
+                {
+                  "name": "value",
+                  "default": "''"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_handleSearchEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
             },
             {
               "kind": "field",
@@ -294,7 +282,41 @@
           "kind": "class",
           "description": "",
           "name": "SearchBar",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "_handleInput",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "privacy": "public",
+              "attribute": "value"
+            }
+          ],
+          "events": [
+            {
+              "name": "value-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "fieldName": "value"
+            }
+          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -310,6 +332,33 @@
           "declaration": {
             "name": "SearchBar",
             "module": "src/search-bar.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/project-2-badge-list.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/project-2-badge-list.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/project-2-badge-list.stories.js"
           }
         }
       ]
