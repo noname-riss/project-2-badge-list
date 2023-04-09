@@ -1,6 +1,6 @@
 
 
-export default async function handler(request, res) {
+export default async function handler(req, res) {
   const search = req.query.search || '';
     const catalog= [
       {
