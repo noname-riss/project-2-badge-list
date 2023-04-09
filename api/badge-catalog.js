@@ -48,12 +48,12 @@ export default async function handler(request, res) {
       },    
 
     ];
-    catalog.map((badgeC) => {
-      badgeC.index = badgeC.title.toLowerCase() + " " + badgeC.author.toLowerCase() + " " + badgeC.paragraph.toLowerCase()+" "+
-      badgeC.stepsToComplete.toLowerCase()+" "+badgeC.timeToComplete.toString().toLowerCase();
+    catalog.map((badge) => {
+      badge.index = badge.title.toLowerCase() + " " + badge.author.toLowerCase() + " " + badge.paragraph.toLowerCase()+" "+
+      badge.stepsToComplete.toLowerCase()+" "+badge.timeToComplete.toString().toLowerCase();
     });
-    catalog = catalog.filter((badgeC) => {
-      return badgeC.index.indexOf(search.toLowerCase()) > -1;
+    catalog = catalog.filter((badge) => {
+      return badge.index.indexOf(search.toLowerCase()) > -1;
     });
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
