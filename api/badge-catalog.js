@@ -1,6 +1,6 @@
 
 export default async function handler(request, res) {
-  const search = req.query.search || '';
+  const search = request.query.search || '';
     let catalog= [
       {
       "titleIcon" : "save",
